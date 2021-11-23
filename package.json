@@ -1,0 +1,29 @@
+{
+  "name": "yelpcamp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Babajide777/yelpcamp.git"
+  },
+  "author": "Oyafemi Babajide",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Babajide777/yelpcamp/issues"
+  },
+  "homepage": "https://github.com/Babajide777/yelpcamp#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
