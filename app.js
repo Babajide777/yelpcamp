@@ -3,6 +3,11 @@ const app = express();
 const mongoose = require("mongoose");
 require("dotenv").config();
 
+app.use(express.static("public"));
+app.set("view engine", "ejs");
+
+app.use("/");
+
 mongoose.connect(
   process.env.MONGODB_URI,
   {
