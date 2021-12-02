@@ -1,12 +1,17 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const morgan = require("morgan");
 require("dotenv").config();
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: true }));
 
-app.use("/");
+app.use("/", require("./routes/usersRoute"));
+app.use("/campgrounds", require("./routes/campgroundsRoute"));
+app.use("/campgrounds/:id/reviews", require("./routes/reviewsRoute"));
 
 mongoose.connect(
   process.env.MONGODB_URI,
