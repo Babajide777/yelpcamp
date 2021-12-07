@@ -3,11 +3,15 @@ const app = express();
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 require("dotenv").config();
+const methodOverride = require("method-override");
+const ejsMate = require("ejs-mate");
 
+app.engine("ejs", ejsMate);
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 
 app.use("/", require("./routes/usersRoute"));
 app.use("/campgrounds", require("./routes/campgroundsRoute"));

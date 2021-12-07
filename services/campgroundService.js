@@ -18,4 +18,16 @@ const newCampground = async ({ title, price, description, location }) => {
   }
 };
 
-module.exports = { newCampground };
+const getAllCampgrounds = async () => await Campground.find();
+
+const getCampgroundById = async (id) => await Campground.findById(id);
+
+const deleteCampgroundById = async (id) =>
+  await Campground.findByIdAndDelete(id);
+
+module.exports = {
+  newCampground,
+  getAllCampgrounds,
+  getCampgroundById,
+  deleteCampgroundById,
+};
